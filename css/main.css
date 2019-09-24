@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "myFont";
+    src: url("/font/方正苏新诗柳楷简体.ttf");
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    -webkit-user-select:none;/*webkit浏览器*/
+    -khtml-user-select:none;/*早起浏览器*/
+    -moz-user-select:none;/*火狐浏览器*/
+    -ms-user-select:none;/*IE浏览器*/
+    user-select:none;/*用户是否能够选中文本*/
+}
+.container{
+    padding: 0;
+    width: 1040px;
+}
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header{
+    position: relative;
+    background-image: url('../img/top.jpg');
+    background-size: 100%;
+    height: 650px;
+}
+.header_con{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.header p:nth-child(1){
+    font-size: 35px;
+    color: #555;
+    font-weight: 300;
+    margin-left: -20px;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
+
+.img_con{
+    display: flex;
+    justify-content: center;
+}
+
+.img_con_1{
+    display: block;
+    margin:auto 0;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.img_con_1 p:nth-child(2){
+    margin-left: 90px;
+}
+.img_con_1 p:nth-child(3){
+    margin-left: 180px;
+}
+.img_numTwo{
+    background-color: rgb(240, 240, 240);
+    width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.text_con{
+margin-top: 20px;
+text-align: center;
+font-size:18px; 
+}
+
+.stu_form{
+    margin-bottom: 20px;
+}
+
+
+.stu_form p{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 300;
+}
+.inp{
+    padding-right: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.form-inline{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-self:baseline;
+}
+
+
+.stu_send{
+    display: flex;
+    justify-content: center;
+}
+/*鼠标点击出现字样*/
+.text-popup {
+    animation: textPopup 2s;
+    color:red;
+    user-select: none;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 99;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+@keyframes textPopup {
+    0%, 100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-50px);
+        color: rgb(0, 217, 255);    
+    }
+}
+
+.btn-block{
+    margin: 10px;
+    width: 50%;
+}
+
+.footer{
+    background-image: url('../img/numFour.jpg');
+    background-size: 100%;
+    background-position-y: -60px;
+    height:480px;
+    margin-bottom: 10px;
+
+}
+
+/* write.html样式 */
+.wr-bac{
+    background-image: url('../img/w2.png');
+    opacity: 0.9;
+    filter: blur(4px);
+    background-size: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.wr-con{ 
+    position: absolute;
+    z-index: 100000;
+    width:1100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+
+.wr-font{
+    font-size: 20px!important;
+}
+
+.wr-btn{
+    margin: 10px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一年后的自己-写信</title>
+    <link href="./img/信息.png" rel="icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+</head>
+<body style="font-family: myFont;">
+    <div class="wr-con stu_form">
+        <p>写给一年后的自己   (˶˚  ᗨ ˚˶)</p>
+        <textarea rows="18" style="resize:none;text-indent:2em!important;padding:10px;" class="form-control wr-font" name="letter" id="letter" placeholder="请开始你的表演！"></textarea>
+        <div style="display: flex;justify-content: center;">
+            <input type="button" class="btn btn-info wr-btn" value="提交给一年后的自己">
+        </div>
+    </div>
+    <div class="container-fluid wr-bac"></div>
+
+    <script>
+        var but = document.querySelector('.wr-btn');
+        but.addEventListener('click',function(){
+            var wrFont = document.querySelector('.wr-font').value;
+            var requestURL = 'http://192.168.1.111:10086/CORS.letter/write';
+            function createRequest(){
+            try{
+                //创建ajax引擎对象
+                request = new XMLHttpRequest();
+            } catch (tryMS) {
+            try{
+                request = new ActiveXObject("Msxm12.XMLHTTP");
+            } catch (otherMS) {
+                try {
+                    request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (failed) {
+                    request = null;
+                }
+            }
+        }
+        return request;
+        }
+        createRequest();
+        request.open('POST', requestURL);
+        request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        let stuId = Cookies.get('stuId');
+        request.send('stuId=' + stuId + '&content=' +wrFont);
+        //复写onreadystatechange函数
+        request.onreadystatechange=function(){
+            //判断request状态码
+            if(request.readyState==4){
+                //判断响应状态码
+                if(request.status == 200){
+                    //获取响应内容
+                    var result=request.responseText;
+                    //处理响应内容
+                    let tempResult = JSON.parse(result);
+                    console.log(tempResult);
+                }else if(tempResult == undefined || !(tempResult.status)){
+                    alert(tempResult.error);
+                }
+            }
+        }
+    })
+    
+    </script>
+    <script src='js/cookie.js'></script>
+</body>
+</html>

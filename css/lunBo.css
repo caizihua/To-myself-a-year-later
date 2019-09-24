@@ -1,0 +1,79 @@
+.box {
+    width: 1040px;
+    height:361px;
+    overflow: hidden;
+    margin: 10px auto 0;
+    position: relative;
+}
+
+#inner-box img {
+    width: 1040px;
+    height:361px;
+    vertical-align: top;
+    /*取消底边的3px */
+}
+
+#inner-box {
+    width: 900%;
+    height: 361px;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+
+#inner-box li {
+    float: left;
+}
+
+.btn span {
+    width: 40px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    font-size: 45px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.btn span:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.btn .left {
+    left: 0;
+    top: 180px;
+}
+
+.btn .right {
+    right: 0;
+    top: 180px;
+}
+.btn .left::before{
+    left: 0;
+}
+
+.btn .right::before{
+    position: absolute;
+    right: 0;
+}
+
+ol {
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+    list-style: none;
+}
+
+ol li {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    float: left;
+    margin: 0 4px;
+}
